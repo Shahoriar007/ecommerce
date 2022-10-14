@@ -51,26 +51,57 @@
 <div class="col-md-6 col-sm-6 create-new-account">
 	<h4 class="checkout-subtitle">Create a new account</h4>
 	<p class="text title-tag-line">Create your new account.</p>
-	<form class="register-form outer-top-xs" role="form">
+
+	<form method="POST" action="{{ route('register') }}">
+            @csrf
+
+		<div class="form-group">
+		    <label class="info-title" for="exampleInputEmail1">Name <span>*</span></label>
+		    <input type="text" name="name" id="name" class="form-control unicase-form-control text-input" >
+
+			<!-- Required error -->
+			@error('name')
+				<span class="invalid-feedback" role="alert">
+					<strong>{{ $message }}</strong>
+				</span>
+			@enderror
+		</div>
 		<div class="form-group">
 	    	<label class="info-title" for="exampleInputEmail2">Email Address <span>*</span></label>
-	    	<input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail2" >
+	    	<input type="email" name="email" id="email" class="form-control unicase-form-control text-input" >
+
+			<!-- Required error -->
+			@error('email')
+				<span class="invalid-feedback" role="alert">
+					<strong>{{ $message }}</strong>
+				</span>
+			@enderror
 	  	</div>
         <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Name <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
-		</div>
-        <div class="form-group">
 		    <label class="info-title" for="exampleInputEmail1">Phone Number <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+		    <input type="text" name="phone" id="phone" class="form-control unicase-form-control text-input" >
+
+			<!-- Required error -->
+			@error('phone')
+				<span class="invalid-feedback" role="alert">
+					<strong>{{ $message }}</strong>
+				</span>
+			@enderror
 		</div>
         <div class="form-group">
 		    <label class="info-title" for="exampleInputEmail1">Password <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+		    <input type="password" name="password" id="password" class="form-control unicase-form-control text-input" >
+
+			<!-- Required error -->
+			@error('password')
+				<span class="invalid-feedback" role="alert">
+					<strong>{{ $message }}</strong>
+				</span>
+			@enderror
 		</div>
          <div class="form-group">
 		    <label class="info-title" for="exampleInputEmail1">Confirm Password <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+		    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control unicase-form-control text-input"  >
 		</div>
 	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up</button>
 	</form>
