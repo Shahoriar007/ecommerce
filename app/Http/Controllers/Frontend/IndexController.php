@@ -55,4 +55,18 @@ class IndexController extends Controller
 
         return redirect()->route('dashboard')->with($notification);
     }
+
+    public function UserChangePassword(){
+
+        // Eloquent ORM Style show profile photo
+
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('frontend.profile.change_password',compact('user'));
+
+
+        // Query Builder Style show profile photo (go to change_password.blade.php)
+
+        // return view('frontend.profile.change_password');
+    }
 }

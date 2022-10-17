@@ -71,3 +71,6 @@ Route::get('/user/profile', [IndexController::class, 'UserProfile'])->name('user
 
 // User Profile Edit Form Submit
 Route::post('/user/profile/store', [IndexController::class, 'UserProfileStore'])->name('user.profile.store');
+
+// User Password Change Page
+Route::get('/user/change/password', [IndexController::class, 'UserChangePassword'])->name('change.password');
