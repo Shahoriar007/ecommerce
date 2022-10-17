@@ -30,7 +30,7 @@ $user = DB::table('users')->where('id',Auth::user()->id)->first();
                     </strong> </h3>
 
                     <div class="card-body">
-                        <form method="post" action="{{ route('user.profile.store') }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('user.password.update') }}" >
                             @csrf
 
                             <div class="form-group">

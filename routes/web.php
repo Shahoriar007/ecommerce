@@ -74,3 +74,6 @@ Route::post('/user/profile/store', [IndexController::class, 'UserProfileStore'])
 
 // User Password Change Page
 Route::get('/user/change/password', [IndexController::class, 'UserChangePassword'])->name('change.password');
+
+// User Password Change Form Submit
+Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdate'])->name('user.password.update');
