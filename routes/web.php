@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
+use App\Http\Controllers\Backend\BrnadController;
 
 use App\Http\Controllers\Frontend\IndexController;
 
@@ -24,7 +25,7 @@ Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
 });
 
 
-// Admin all route
+// Admin Auth and Profile all route
 
 // Admin Dashboard
 Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
@@ -52,7 +53,7 @@ Route::post('/update/change/password', [AdminProfileController::class, 'AdminUpd
 
 
 
-// User all route
+// User Auth and Profile all route
 
 Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {
     $id = Auth::user()->id;
@@ -77,3 +78,17 @@ Route::get('/user/change/password', [IndexController::class, 'UserChangePassword
 
 // User Password Change Form Submit
 Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdate'])->name('user.password.update');
+
+
+// Admin Brand all routes
+
+Route::prefix('brand')->group(function () {
+
+    // Admin all brand view page
+    Route::get('/view', [BrnadController::class, 'BrandView'])->name('all.brand');
+
+    // Admin all brand input form submit
+    Route::get('/store', [BrnadController::class, 'BrandStore'])->name('brand.store');
+
+
+});

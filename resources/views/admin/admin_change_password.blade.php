@@ -24,39 +24,40 @@
 					  <div class="row">
 						<div class="col-12">	
 							
-						<div class="row">
-								<div class="col-md-6">
+							<div class="row">
+									<div class="col-md-6">
 
-								<div class="form-group">
-									<h5>Current Password<span class="text-danger">*</span></h5>
-									<div class="controls">
-										<input type="password" id="current_password" name="oldpassword" class="form-control" required="" >
+									<div class="form-group">
+										<h5>Current Password<span class="text-danger">*</span></h5>
+										<div class="controls">
+											<input type="password" id="current_password" name="oldpassword" class="form-control" required="" >
+										</div>
 									</div>
-								</div>
 
-                                <div class="form-group">
-									<h5>New Password<span class="text-danger">*</span></h5>
-									<div class="controls">
-										<input type="password" id="password" name="password" class="form-control" required="" >
+									<div class="form-group">
+										<h5>New Password<span class="text-danger">*</span></h5>
+										<div class="controls">
+											<input type="password" id="password" name="password" class="form-control" required="" >
+										</div>
 									</div>
-								</div>
 
-                                <div class="form-group">
-									<h5>Confirm Password<span class="text-danger">*</span></h5>
-									<div class="controls">
-										<input type="password" id="password_confirmation" name="password_confirmation" class="form-control" required="" >
+									<div class="form-group">
+										<h5>Confirm Password<span class="text-danger">*</span></h5>
+										<div class="controls">
+											<input type="password" id="password_confirmation" name="password_confirmation" class="form-control" required="" >
+										</div>
 									</div>
-								</div>
 
-								</div>
+									</div>
 
-						</div>
+							</div>
 						
-					  </div>
+					  	</div>
 						
 						<div class="text-xs-right">
 							<button type="submit" class="btn btn-rounded btn-info">Submit</button>
 						</div>
+					  </div>
 					</form>
 
 				</div>
