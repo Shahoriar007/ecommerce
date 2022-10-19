@@ -80,15 +80,22 @@ Route::get('/user/change/password', [IndexController::class, 'UserChangePassword
 Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdate'])->name('user.password.update');
 
 
-// Admin Brand all routes
+// Admin -> Brand all routes
 
 Route::prefix('brand')->group(function () {
 
-    // Admin all brand view page
+    // Admin -> all brand view page
     Route::get('/view', [BrnadController::class, 'BrandView'])->name('all.brand');
 
-    // Admin all brand input form submit
-    Route::get('/store', [BrnadController::class, 'BrandStore'])->name('brand.store');
+    // Admin -> all brand input form submit
+    Route::post('/store', [BrnadController::class, 'BrandStore'])->name('brand.store');
+
+    // Admin -> brand edit page
+    Route::get('/edit/{id}', [BrnadController::class, 'BrandEdit'])->name('brand.edit');
+
+    // Admin -> brand edit form submit
+    Route::post('/update', [BrnadController::class, 'BrandUpdate'])->name('brand.update');
+
 
 
 });
