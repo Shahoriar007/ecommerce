@@ -96,6 +96,9 @@ Route::prefix('brand')->group(function () {
     // Admin -> brand edit form submit
     Route::post('/update', [BrnadController::class, 'BrandUpdate'])->name('brand.update');
 
+    // Admin -> brand delete
+    Route::get('/delete/{id}', [BrnadController::class, 'BrandDelete'])->name('brand.delete');
+
 
 
 });
